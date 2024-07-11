@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор вартості собак</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Калькулятор вартості собак</h1>
+  </header>
+
+  <main>
+    <section id="calculator">
+      <h2>Розрахуйте вартість собаки</h2>
+      <form id="calculator-form">
+        <label for="breed">Порода:</label>
+        <select id="breed">
+          <option value="labrador">Лабрадор</option>
+          <option value="samoyed">Самоїд</option>
+          <option value="bulldog">Французький бульдог</option>
+          <option value="yorkshire">Йоркширський тер'єр</option>
+          <!-- Додайте більше порід за необхідністю -->
+        </select>
+
+        <label for="pedigree">Родословна:</label>
+        <select id="pedigree">
+          <option value="none">Немає</option>
+          <option value="good">Хороша</option>
+          <option value="champion">Чемпіонська</option>
+        </select>
+
+        <label for="city">Місто:</label>
+        <select id="city" class="js-example-basic-single"></select>
+
+        <label for="gender">Стать:</label>
+        <select id="gender">
+          <option value="male">Чоловіча</option>
+          <option value="female">Жіноча</option>
+        </select>
+
+        <label for="age">Вік (у місяцях):</label>
+        <input type="number" id="age" name="age" min="0" max="240">
+
+        <label for="health">Здоров'я:</label>
+        <select id="health">
+          <option value="healthy">Здоровий</option>
+          <option value="unhealthy">Не здоровий</option>
+        </select>
+
+        <label for="vaccination">Вакцинації:</label>
+        <select id="vaccination">
+          <option value="yes">Так</option>
+          <option value="no">Ні</option>
+        </select>
+
+        <label for="training">Навчання:</label>
+        <select id="training">
+          <option value="none">Немає</option>
+          <option value="basic">Базове</option>
+          <option value="advanced">Просунуте</option>
+        </select>
+
+        <button type="button" onclick="calculatePrice()">Розрахувати ціну</button>
+      </form>
+      <div id="result">
+        <h3>Ціна собаки:</h3>
+        <p id="price">-</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Калькулятор вартості собак</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
